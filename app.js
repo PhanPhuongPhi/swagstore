@@ -49,6 +49,7 @@ function createApp() {
 
     req.session    = sessions[sid];
     res.locals.user = req.session.user || null;
+    res.locals.isStaff = req.session.user && req.session.user.role === 'staff';
     res.setHeader('Set-Cookie', `sid=${sid}; Path=/; HttpOnly; SameSite=Lax`);
     next();
   });
