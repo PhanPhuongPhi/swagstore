@@ -1,0 +1,36 @@
+<div class="page-container">
+  <div class="page-header" style="display: flex; justify-content: space-between; align-items: center;">
+    <h1 class="page-title">Staff Panel: Products</h1>
+    <a href="/staff/products/new" class="btn-primary" style="padding: 0.5rem 1rem;">+ Add New Product</a>
+  </div>
+
+  <table class="table" style="width: 100%; border-collapse: collapse; margin-top: 1.5rem;">
+    <thead>
+      <tr style="border-bottom: 2px solid #e2e8f0; text-align: left;">
+        <th style="padding: 1rem;">ID</th>
+        <th style="padding: 1rem;">Image</th>
+        <th style="padding: 1rem;">Name</th>
+        <th style="padding: 1rem;">Category</th>
+        <th style="padding: 1rem;">Price</th>
+        <th style="padding: 1rem; text-align: right;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr style="border-bottom: 1px solid #e2e8f0;">
+        <td style="padding: 1rem;">{{id}}</td>
+        <td style="padding: 1rem;"><img src="{{image}}" alt="{{name}}" style="width: 40px; height: 40px; object-fit: contain;"></td>
+        <td style="padding: 1rem; font-weight: 500;">{{name}}</td>
+        <td style="padding: 1rem;">{{category}}</td>
+        <td style="padding: 1rem;">${{price}}</td>
+        <td style="padding: 1rem; text-align: right;">
+          <a href="/staff/products/{{id}}/edit" class="btn-secondary" style="padding: 0.3rem 0.6rem; font-size: 0.85rem; margin-right: 0.5rem;">Edit</a>
+          <form action="/staff/products/{{id}}/delete" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this product?');">
+            <button type="submit" class="btn-primary" style="padding: 0.3rem 0.6rem; font-size: 0.85rem; background: #ef4444; border-color: #ef4444;">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
