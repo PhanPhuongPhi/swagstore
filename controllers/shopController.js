@@ -123,13 +123,23 @@ exports.placeOrder = (req, res) => {
   const order = {
     id:       'ORD-' + Date.now(),
     userId:   user.id,
-    email:    user.email,
+    email:    req.body.email || user.email, // Use form email if provided
     items:    cart.lines,
     total:    cart.total,
     name:     req.body.name,
     address:  req.body.address,
     placedAt: new Date().toLocaleString('vi-VN'),
   };
+  
+  // If staff is ordering for someone else, try to find their account
+  if (user.role === 'staff' && req.body.email && req.body.email !== user.email) {
+    const Account = require('../models/Account');
+    const customer = Account.findByEmail(req.body.email);
+    if (customer) {
+      order.userId = customer.id;
+    }
+  }
+
   Order.add(order);
   cart.clear();
   saveCart(req, cart);
