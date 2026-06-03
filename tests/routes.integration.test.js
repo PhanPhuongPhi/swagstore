@@ -5,7 +5,6 @@ const path     = require('path');
 const request  = require('supertest');
 const createApp = require('../app');
 const Account  = require('../models/Account');
-const Order    = require('../models/Order');
 
 const accountsFile = path.join(__dirname, '..', 'data', 'accounts.json');
 const ordersFile   = path.join(__dirname, '..', 'data', 'orders.json');
