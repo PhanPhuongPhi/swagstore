@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1780469368191,
+        "name": "Phan Phuong Phi",
+        "email": "coderphan99@gmail.com",
+        "address": "Cat Lai, HCMC",
+        "passwordHash": "$2a$10$Nd9gdw5XYG1aH6FvpfR/Eemr1Xre1m/jG6XrA4wqIXmKYVMMjZV6K",
+        "role": "customer",
+        "createdAt": "2026-06-03T06:49:28.262Z"
+    }
+]
