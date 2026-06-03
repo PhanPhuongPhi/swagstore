@@ -7,5 +7,14 @@
         "passwordHash": "$2a$10$Nd9gdw5XYG1aH6FvpfR/Eemr1Xre1m/jG6XrA4wqIXmKYVMMjZV6K",
         "role": "customer",
         "createdAt": "2026-06-03T06:49:28.262Z"
+    },
+    {
+        "id": 1780469368192,
+        "name": "Staff User",
+        "email": "staff@gmail.com",
+        "address": "Store",
+        "passwordHash": "$2a$10$Nd9gdw5XYG1aH6FvpfR/Eemr1Xre1m/jG6XrA4wqIXmKYVMMjZV6K",
+        "role": "staff",
+        "createdAt": "2026-06-03T06:50:00.000Z"
     }
 ]
